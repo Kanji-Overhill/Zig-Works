@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Varta:wght@300;400;700&display=swap');
+body{
+	font-family: 'Varta', sans-serif;
+}
+.landing-1{
+	background-size: cover;
+	background-position: center;
+	background-image: url(../images/landing.jpg);
+}
+.landing-1 .first{
+	position: relative;
+}
+.landing-1 img{
+	margin-bottom: 3rem;
+	max-width: 440px;
+}
+.landing-1 .row{
+	min-height: 100vh;
+}
+.landing-1 .second{
+	background-size: cover;
+	background-position: center;
+}
+.landing-1 .col-md-6{
+	padding: 0 4rem;
+}
+.landing-1 h1{
+	color: #93CB40;
+	padding: 0 2rem;
+	font-size: 2rem;
+}
+.landing-1 p{
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 0 2rem;
+}
+.cooming{
+	font-size: 2.5rem!important;
+	color: #fff;
+	align-self: stretch;
+	text-align: right;
+	font-style: italic;
+	font-weight: bolder;
+}
+.triangle{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 250px!important;
+    margin-bottom: 0!important;
+}
+.triangle img{
+	width: 100%;
+	margin-bottom: 0!important;
+}
+.linkedin{
+	position: absolute;
+    left: 10%;
+    top: 70%;
+    background: #fff;
+    width: 50px!important;
+    border-radius: 4px;
+}
+@media (max-width: 500px) {
+  .landing-1 .col-md-6 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .landing-1 h1{
+  	padding: 0;
+  }
+  .landing-1 p {
+    padding: 0rem;
+  }
+  .landing-1 img {
+    width: 100%;
+  }
+  .landing-1{
+  	background: #2C2C2A;
+  }
+  .cooming{
+  	text-align: center;
+  }
+}
