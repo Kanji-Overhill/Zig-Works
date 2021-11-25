@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/candidate-register', function () {
+    return view('register/candidate');
+});
+Route::post('/candidate-register', 'App\Http\Controllers\RegisterCandidate@insert');

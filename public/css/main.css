@@ -1,7 +1,162 @@
 @import url('https://fonts.googleapis.com/css2?family=Varta:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
 body{
+	position: relative;
 	font-family: 'Varta', sans-serif;
 }
+header{
+	background: #645434;
+}
+.logo{
+	background: #2C2C2B;
+	padding: .9rem 2rem;
+}
+.logo-content{
+	position: relative;
+}
+.triangulo-left{
+  width: 0;
+  position: absolute;
+  right: -123px;
+  top: 0;
+  height: 0;
+  border-top: 123px solid #2C2C2B;
+  border-right: 123px solid transparent;     
+}
+.nav-link{
+	color: #fff!important;
+	font-size: 1.3rem;
+	padding-left: 1.5rem!important;
+	padding-right: 1.5rem!important;
+}
+.login-link{
+	margin-left: 4rem;
+}
+/*Register Styles*/
+.register-candidate{
+	font-family: 'Open Sans', sans-serif;
+	background: #645434;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.register-candidate .container-register{
+	border-radius: 10px;
+	background: #fff;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.register-candidate .container-register h1{
+	font-weight: 100;
+	font-size: 36px;
+	color:  #645434;
+}
+.register-candidate .container-register label{
+	color: #645434;
+	font-size: 24px;
+}
+.register-candidate .container-register label span{
+	color:  red;
+}
+.register-candidate .container-register input{
+	background: #F6F6F6;
+	border:  0;
+}
+.register-candidate .container-register select{
+	background: #F6F6F6;
+	border:  0;
+}
+.register-candidate .container-register textarea{
+	background: #F6F6F6;
+	border:  0;
+}
+.register-candidate .container-register .linkedin_label img{
+	width: 20px;
+	margin-right: .5rem;
+}
+.register-candidate .container-register .gray-color{
+	color: #7B7C7D;
+}
+.register-candidate .container-register .label-check{
+	font-size: 20px;
+}
+/* Customize the label (the container) */
+.label-check{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.label-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: #F6F6F6;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 6px;
+}
+
+/* On mouse-over, add a grey background color */
+.label-check:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.label-check input:checked ~ .checkmark {
+  background-color: #645434;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.label-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.btn-send{
+	background: #645434!important;
+	font-size: 1.2rem;
+	padding: .5rem 3rem;
+	color: #fff;
+
+}
+
+
+/*Styles Landing*/
 .landing-1{
 	background-size: cover;
 	background-position: center;
@@ -69,17 +224,35 @@ body{
   }
   .landing-1 h1{
   	padding: 0;
+  	    font-size: 1.3rem;
+    text-align: center;
   }
   .landing-1 p {
     padding: 0rem;
+        font-size: 1.3rem;
+    text-align: center;
   }
   .landing-1 img {
-    width: 100%;
+    width: 75%;
   }
   .landing-1{
-  	background: #2C2C2A;
+  	background-image: url(../images/landing_movil.jpg);
   }
   .cooming{
   	text-align: center;
   }
+  .linkedin{
+  	width: 35px!important;
+  	display: none;
+  }
+  .triangle {
+    max-width: 95px!important;
+	}
+	.second{
+		order: -1;
+    min-height: 38vh;
+	}
+	.cooming{
+		padding-bottom: 6rem;
+	}
 }

@@ -21,7 +21,43 @@
 <body>
     <div id="app">
         <header>
-           
+           <div class="container-fluid">
+               <div class="row justify-content-between">
+                   <div class="col-md-3 pl-0 pr-0 logo-content">
+                       <img src="{{url('images/ZW_WHITE.png')}}" alt="" class="img-fluid logo">
+                       <div class="triangulo-left"></div>
+                   </div>
+                   <div class="col-md-8 d-flex align-items-center justify-content-end">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#!">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#!">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#!">How it works</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#!">Events</a>
+                                </li>
+                                <li class="nav-item login-link">
+                                    <a class="nav-link" href="#!">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#!">Sign Up</a>
+                                </li>
+                            </ul>
+                          </div>
+                        </nav>
+                   </div>
+               </div>
+           </div>
         </header>
         <main>
             @yield('content')

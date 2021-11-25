@@ -22,9 +22,8 @@ class CreateCandidatesTable extends Migration
             $table->string('password');
             $table->string("school");
             $table->string("phone");
-            $table->string("asociate");
             $table->string("country");
-            $table->string("city");
+            $table->string("country_legal");
             $table->string("country_geo_location");
             $table->string("linkedin");
             $table->text("experience");
