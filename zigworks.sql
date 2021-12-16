@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-12-2021 a las 21:51:52
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.4.19
+-- Tiempo de generación: 16-12-2021 a las 14:57:26
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 7.4.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,7 +95,7 @@ CREATE TABLE `eventes` (
 --
 
 INSERT INTO `eventes` (`id`, `name`, `description`, `video`, `image`, `speakers`, `hosts`, `spaces`, `category`, `language`, `date`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem1 Ipsum Dolor Sedo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '1CO_VYBqd0M', '0e8ae761-b3e0-4bc9-bfef-2d9df907ed04.jpg', 3, 1, 10, 'category_1', 'english', '2021-12-17', NULL, NULL),
+(1, 'Lorem1 Ipsum Dolor Sedo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '1CO_VYBqd0M', 'candidate_back.jpg', 3, 1, 10, 'category_1', 'english', '2021-12-17', NULL, NULL),
 (2, 'Lorem2 Ipsum Dolor Sedo2', 'Lorem2 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'LXb3EKWsInQ', 'e76e3274-ed80-48a6-837d-8f786ee63f7e.jpg', 3, 1, 10, 'category_2', 'english', '2021-12-17', NULL, NULL),
 (3, 'Lorem2 Ipsum Dolor Sedo3', 'Lorem2 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Zv11L-ZfrSg', 'be079a97-f22e-4145-82d2-89fbfc162491.jpg', 3, 1, 10, 'category_3', 'spanish', '2021-12-17', NULL, NULL);
 
@@ -185,6 +185,15 @@ CREATE TABLE `speakers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `speakers`
+--
+
+INSERT INTO `speakers` (`id`, `name`, `type`, `image`, `event_id`, `created_at`, `updated_at`) VALUES
+(1, 'Loremp Impsum', 'host', '0e8ae761-b3e0-4bc9-bfef-2d9df907ed04.jpg', 1, NULL, NULL),
+(2, 'Loremp', 'speaker', 'be079a97-f22e-4145-82d2-89fbfc162491.jpg', 1, NULL, NULL),
+(3, 'Loremp 2', 'speaker', 'e76e3274-ed80-48a6-837d-8f786ee63f7e.jpg', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -313,7 +322,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `speakers`
 --
 ALTER TABLE `speakers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

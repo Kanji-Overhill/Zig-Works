@@ -394,6 +394,12 @@ color: white!important;
 	font-size: 1.3rem;
 	margin-left: 1rem;
 }
+.filters a img{
+	width: 25px;
+}
+.conference-section .form-control{
+	margin-left: 3rem;
+}
 @media (max-width: 500px) {
   .landing-1 .col-md-6 {
     padding-left: 15px;

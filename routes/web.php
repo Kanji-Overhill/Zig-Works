@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/events', 'App\Http\Controllers\EventsController@getAllEvents')->name('events');
-Route::get('/events-searh', 'App\Http\Controllers\EventsController@searchEvents')->name('eventsSearch');
+Route::post('/events-searh', 'App\Http\Controllers\EventsController@searchEvents')->name('eventsSearch');
+Route::post('/send-mail', 'App\Http\Controllers\EventsController@sendMail')->name('sendMail');
+
 Route::get('/candidate-register', function () {
     return view('register/candidate');
 });
