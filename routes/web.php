@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/events', 'App\Http\Controllers\EventsController@getAllEvents')->name('events');
 Route::post('/events-searh', 'App\Http\Controllers\EventsController@searchEvents')->name('eventsSearch');
+Route::post('/order-events', 'App\Http\Controllers\EventsController@orderEvents')->name('orderEvents');
 Route::post('/send-mail', 'App\Http\Controllers\EventsController@sendMail')->name('sendMail');
 
 Route::get('/candidate-register', function () {

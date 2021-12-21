@@ -52,10 +52,10 @@
                                     <a class="nav-link" href="#!">Events</a>
                                 </li>
                                 <li class="nav-item login-link">
-                                    <a class="nav-link" href="#!">Login</a>
+                                    <a class="nav-link" href="#!">Employer</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#!">Sign Up</a>
+                                <li class="nav-item login-link">
+                                    <a class="nav-link" href="#!">Candidate</a>
                                 </li>
                             </ul>
                           </div>
@@ -97,7 +97,7 @@
                     },
                     success: function(response){
                         if(response['events'].length === 0){
-                            $('.alert-search strong').html("No hay resultados");
+                            $('.alert-search strong').html("No results found");
                             $('.alert-search').removeClass("d-none");
                         }else if(response['events'].length != 0){
                             $('.alert-search').addClass("d-none");
@@ -115,24 +115,51 @@
         $(document).on('keydown', '.email-input', function(ev) {
             if(ev.key === 'Enter') {
                 var email = $(this).val();
-                var id = $(this).attr("data-id");
                 $.ajax({
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     url: "{{route('sendMail')}}",
                     type: 'POST',
                     data: {
-                        email: email,
-                        id: id
-                    },
-                    error: function (request) {
-                        console.log(request);
-                        
+                        email: email
                     },
                     success: function(response){
-                        
+                        $(".email-share").removeClass("d-none");
+                        $(".email-input").addClass("d-none");
+                        $(".email-success").removeClass("d-none");
                     }
                 });
             }
+        });
+        $( ".email-share" ).click(function(e) {
+            e.preventDefault();
+            $(this).addClass("d-none");
+            $(".email-input").removeClass("d-none");
+        });
+        $( ".order-link" ).click(function(e) {
+            e.preventDefault();
+            var order = $(this).data("order");
+            $.ajax({
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    url: "{{route('orderEvents')}}",
+                    type: 'POST',
+                    data: {
+                        order: order
+                    },
+                    success: function(response){
+                        if(response['events'].length === 0){
+                            $('.alert-search strong').html("No results found");
+                            $('.alert-search').removeClass("d-none");
+                        }else if(response['events'].length != 0){
+                            $('.alert-search').addClass("d-none");
+                            $('.events-search').html("");
+                            $.each(response['events'], function(index, val) {
+                                $('.events-search').append('<div class="col-md-4 grid-item '+val.category+' '+val.language+'"><a href="" data-toggle="modal" data-target="#'+val.id+'"><div class="content-coference"><div class="event-image d-flex align-items-center justify-content-center" style="background-image: url({{ url('images/') }}/'+val.image+');"><img src="{{ url('images/play.svg') }}" alt=""></div><h3>'+val.name+'</h3><p><b>By:</b> Loremp Ipsum</p></div></a></div>');
+                            });
+                        }else{
+                            $('.alert-search strong').html("Error");
+                        }
+                    }
+                });
         });
         
     </script>

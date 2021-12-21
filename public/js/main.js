@@ -17,5 +17,16 @@ $( document ).ready(function() {
             
         }
     });
+    $(".share-link").click(function(e){
+        e.preventDefault();
+        $(this).addClass("d-none");
+        $(".social-share").removeClass("d-none");
+    });
+    $(".grid-item").click(function(){
+        $(".email-share").removeClass("d-none");
+        $(".email-input").addClass("d-none");
+        $(".email-success").addClass("d-none");
+        $(".social-share").addClass("d-none");
+    });
 
 });

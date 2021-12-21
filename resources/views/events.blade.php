@@ -96,8 +96,8 @@
 	    <button class="glide__bullet" data-glide-dir="=2"></button>
 	</div>
 	<div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="{{ url('images/002-left-arrow.png') }}" alt=""></button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="{{ url('images/001-right-arrow.png') }}" alt=""></button>
   </div>
   </div>
 </section>
@@ -113,8 +113,8 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12 filters text-right mb-4">
-					<a href=""><img src="{{ url('images/filter-filled-tool-symbol.png') }}" alt="" class="img-fluid"> Filter</a>
-					<a href=""><img src="{{ url('images/filter.png') }}" alt="" class="img-fluid"> Order</a>
+					<a href="" data-toggle="modal" data-target="#filterModal"><img src="{{ url('images/filter-filled-tool-symbol.png') }}" alt="" class="img-fluid"> Filter</a>
+					<a href="" data-toggle="modal" data-target="#orderModal"><img src="{{ url('images/filter.png') }}" alt="" class="img-fluid"> Order</a>
 					<input type="text" class="form-control d-inline" name="search" id="search" placeholder="Look for a conference" style="width: auto">
 				</div>
 				<div class="col-md-3">
@@ -122,11 +122,6 @@
 					  <strong></strong>
 					</div>
 				</div>	
-				<div class="col-12 filters-group mb-4">
-					<button data-filter="category_1">Category 1</button>
-					<button data-filter="category_2">Category 2</button>
-					<button data-filter="category_3">Category 3</button>
-				</div>
 			</div>
 			<div class="row events-search">
 				@foreach ($events as $event)
@@ -162,12 +157,20 @@
         <ul class="d-flex justify-content-end">
         	<li>
         		<a href="" class="email-share"><img src="{{ url('images/email.svg') }}" alt=""></a>
-        		<input type="text" class="form-control email-input" data-id="{{ $event->id }}">
+        		<input type="text" class="form-control email-input d-none mr-2" placeholder="Email share event" data-id="{{ $event->id }}">
         	</li>
         	<li>
-        		<a href=""><img src="{{ url('images/share.svg') }}" alt=""></a>
+        		<a href="" class="share-link"><img src="{{ url('images/share.svg') }}" alt=""></a>
+        		<ul class="social-share d-none">
+        			<li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v=r8J10VdfyZU&ab_channel=CodePioneers" target="_blank"><img src="{{ url('images/001-facebook.png') }}" alt=""></a></li>
+        			<li><a href="https://twitter.com/intent/tweet?text=https://www.youtube.com/watch?v=r8J10VdfyZU&ab_channel=CodePioneers" target="_blank"><img src="{{ url('images/002-twitter.png') }}" alt=""></a></li>
+        			<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//zig-works.com/&title=Zig%20works&summary=&source=" target="_blank"><img src="{{ url('images/003-linkedin.png') }}" alt=""></a></li>
+        		</ul>
         	</li>
         </ul>
+        <div class="alert alert-success email-success d-none text-center mt-2" role="alert">
+				    <strong>Se ha enviado</strong> tu correo de invitacion
+				</div>
         <h3>{{ $event->name }}</h3>
         <p>{{ $event->description }}</p>
         <div class="container">
@@ -205,4 +208,58 @@
   </div>
 </div>
 @endforeach
+<!-- Modal -->
+<div class="modal" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-7 filters-group mb-4">
+		        	<h3>Category</h3>
+		        	<button data-filter="all">All</button>
+							<button data-filter="category_1">Category 1</button>
+							<button data-filter="category_2">Category 2</button>
+							<button data-filter="category_3">Category 3</button>
+							<button data-filter="chemistry">Chemistry</button>
+						</div>
+						<div class="col-md-5 filters-group">
+							<h3>Language</h3>
+							<button data-filter="all">All</button>
+							<button data-filter="english">English</button>
+							<button data-filter="spanish">Spanish</button>
+						</div>		
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        	<div class="row">
+        		<div class="col-md-12 filters-group mb-4">
+		        	<h3>Sort</h3>
+							<a href="" class="order-link" data-order="desc">Recent</a>
+							<a href="" class="order-link" data-order="asc">Oldest</a>
+						</div>	
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
