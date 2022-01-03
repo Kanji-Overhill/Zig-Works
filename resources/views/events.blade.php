@@ -128,7 +128,7 @@
 					<div class="col-md-4 grid-item {{ $event->category }} {{ $event->language }}">
 						<a href="" data-toggle="modal" data-target="#{{ $event->id }}">
 							<div class="content-coference">
-								<div class="event-image d-flex align-items-center justify-content-center" style="background-image: url({{ url('images/') }}/{{ $event->image }});">
+								<div class="event-image d-flex align-items-center justify-content-center" style="background-image: url({{ url('images/events/') }}/{{ $event->image }});">
 									<img src="{{ url('images/play.svg') }}" alt="">
 								</div>
 								<h3>{{ $event->name }}</h3>

@@ -28,5 +28,9 @@ $( document ).ready(function() {
         $(".email-success").addClass("d-none");
         $(".social-share").addClass("d-none");
     });
+    $("#add-speaker").click(function(e){
+        e.preventDefault();
+        $(".speakers_form").append('<div class="d-flex mb-2"><input type="text" class="form-control" name="speaker_name[]" placeholder="Name"><select class="custom-select" name="speaker_type[]"><option selected hidden>Type Speaker...</option><option value="host">Host</option><option value="speaker">Speaker</option></select><input type="file" name="speaker_image[]" placeholder="Name"></div>')
+    });
 
 });

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<section id="register-candidate" class="register-candidate" style="background-image: url(images/candidate_back.jpg);">
+<section id="register-candidate" class="register-candidate" style="background-image: url(images/register-employer.svg);">
 		@if (isset($confirmado))
 			@if($confirmado == true)
 				<form method="POST" action="{{ route('candidate-register-post-confirmed') }}">
@@ -614,8 +614,8 @@
 											<h2 class="text-center"><strong>Registered Successfully<strong></h2>
 										</div>
 									@else
-										<div class="col-12">
-											<h1>Registration Candidate</h1>
+										<h1>Registration Candidate</h1>
+										<div class="col-12 ">
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 										</div>
 										<div class="col-md-12">

@@ -52,10 +52,10 @@
                                     <a class="nav-link" href="#!">Events</a>
                                 </li>
                                 <li class="nav-item login-link">
-                                    <a class="nav-link" href="#!">Employer</a>
+                                    <a class="nav-link" href="{{ url('/employer-register') }}">Employer</a>
                                 </li>
                                 <li class="nav-item login-link">
-                                    <a class="nav-link" href="#!">Candidate</a>
+                                    <a class="nav-link" href="{{ url('/candidate-register') }}">Candidate</a>
                                 </li>
                             </ul>
                           </div>

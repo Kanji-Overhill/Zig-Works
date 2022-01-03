@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use App\Entities\Parameter;
+use App\Entities\Contents\Content;
 use App\Models\Eventes;
 use App\Models\Speakers;
 

@@ -6,6 +6,10 @@ body{
 }
 header{
 	background: #645434;
+	overflow: hidden;
+}
+main{
+	padding-top: 122px;
 }
 a:hover{
 	text-decoration: none;
@@ -23,17 +27,22 @@ a:hover{
   right: -123px;
   top: 0;
   height: 0;
-  border-top: 115px solid #2C2C2B;
+  border-top: 140px solid #2C2C2B;
   border-right: 123px solid transparent;     
 }
 .nav-link{
 	color: #fff!important;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	padding-left: 1.5rem!important;
 	padding-right: 1.5rem!important;
 }
 .login-link{
 	margin-left: 4rem;
+}
+.login-link a{
+	background: #8DED00;
+	border-radius: 7px;
+	color: #2C2C2A!important;
 }
 /*Register Styles*/
 .register-candidate{
@@ -48,13 +57,20 @@ a:hover{
 .register-candidate .container-register{
 	border-radius: 10px;
 	background: #fff;
-	padding-top: 1rem;
+	padding-top: 0rem;
 	padding-bottom: 1rem;
+	overflow: hidden;
 }
 .register-candidate .container-register h1{
 	font-weight: 100;
 	font-size: 36px;
-	color:  #645434;
+	width: 100%;
+	margin-top: -1px;
+	padding: .5rem;
+	text-transform: uppercase;
+	background: #042B58;
+	text-align: center;
+	color:  #fff;
 }
 .register-candidate .container-register label{
 	color: #645434;
@@ -403,6 +419,9 @@ color: white!important;
 .glide__arrow{
   background-color: #2E2E2D;
 }
+.glide__arrow img{
+	width: 40px!important;
+}
 .filters-group button{
 	background: transparent;
 	border: 0;
@@ -428,6 +447,94 @@ color: white!important;
 }
 .social-share li img{
 	width: 20px;
+}
+.login-1{
+	background-size: cover;
+	background-position: center;
+	background-image: url(../images/login-background.svg);
+}
+.login-1 form{
+	background: #FDFDFD;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 29px;
+	padding: 2rem;
+}
+.login-1 form input{
+	background: #FFFFFF;
+	border: 2px solid #8DED00;
+	box-sizing: border-box;
+	border-radius: 11px;
+	font-size: 1.2rem;
+	padding: .5rem 1rem;
+}
+.login-1 form p a{
+	color: #8DED00;
+	padding-left: 2rem;
+}
+.login-1 .btn-login{
+	background: #8DED00;
+	border: 2px solid #8DED00;
+	box-sizing: border-box;
+	border-radius: 54px;
+	display: block;
+	width: 100%;
+	color: #fff;
+}
+/*Administrador Css*/
+.admin-panel .h-100{
+	min-height: 100vh;
+}
+.admin-panel .col-md-2{
+	background: #2C2C2A;
+	padding-top: 2rem;
+}
+.admin-panel .col-md-2 img{
+	width: 100%;
+	margin-bottom: 4rem;
+}
+.admin-panel .col-md-2 ul{
+	list-style: none;
+}
+.admin-panel .col-md-2 ul li{
+	display: block;
+	margin-bottom: 2rem;
+}
+.admin-panel .col-md-2 ul li i{
+	color: #fff;
+	font-size: 1.2rem;
+	margin-right: .5rem;
+}
+.admin-panel .col-md-2 ul li a{
+	color: #fff;
+	font-size: 1.2rem;
+	padding: .5rem 1rem;
+}
+.admin-panel .col-md-2 ul li a.active{
+	color: #2C2C2A;
+	background: #fff;
+	border-radius: 4px;
+}
+.admin-panel .col-md-2 ul li a.active i{
+	color: #2C2C2A;
+}
+.modal-admin .modal-content{
+	background: #fff;
+}
+.modal-admin .close{
+	color: #2C2C2A!important;
+}
+.modal-admin .close:focus, .modal-admin  .close:hover{
+	color: #2C2C2A!important;
+}
+.speakers_form input, .speakers_form select{
+	margin-right: 10px;
+}
+.speakers_form i{
+	color: #93CB40;
+	font-size: 1.3rem;
+}
+.speakers_form .custom-select{
+	width: 32%;
 }
 @media (max-width: 500px) {
   .landing-1 .col-md-6 {
